@@ -91,7 +91,7 @@ Use your existing synced copy of `Graphical Reader.user.js` or [download the scr
 5. At the end of the listing, select **Next page** to continue to the next journal or publisher.
 
 ### Manual navigation
-- Swipe left or right, use the arrow keys, or tap the previous and next buttons to browse articles.
+- Swipe left/right/up/down, press the arrow keys, or use navigation buttons.
 - Press Space to start or pause the slideshow.
 - Use the outer buttons to jump to the first or last article of loaded pages, or click or drag the timeline to choose a position. At the first article, the first button jumps to the first article of the previous page.
 - Select **×** in the upper-left corner to return to the publisher page.
