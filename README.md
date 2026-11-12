@@ -1,5 +1,5 @@
 # Graphical Reader
-Graphical Reader is a browser userscript for browsing graphical abstracts and article images from scholarly journals in a full-screen slideshow.
+Tired of scrolling through journal pages or text-heavy RSS feeds to find new papers worth reading? Graphical Reader lets you scan recent publications focused on graphics in a slideshow or by swiping.
 
 ![Graphical Reader on iOS Safari showing a Nature Portfolio article, keyword highlights, and slideshow controls](docs/images/iOS%20Safari%20230px.png)
 
