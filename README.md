@@ -13,7 +13,6 @@ Graphical Reader is a browser userscript for browsing graphical abstracts and ar
 - [Use](#use)
 - [Notes](#notes)
 - [Customization](#customization)
-- [License](#license)
 
 ## Features
 - View only graphical abstracts or article images
@@ -107,6 +106,3 @@ To customize the journal sequence or keyword filters, follow the comments near t
 
 ## Notes
 Nature search results are sorted by the publication date of the accepted manuscript. The graphical abstract becomes available when the Version of Record is published. In *Nature Communications*, the Version of Record can appear on the same day as the accepted manuscript or up to three months later.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
