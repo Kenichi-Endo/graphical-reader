@@ -1,7 +1,7 @@
 # Graphical Reader
 Tired of scrolling through journal pages or text-heavy RSS feeds to find new papers worth reading? Graphical Reader lets you scan recent publications focused on graphics in a slideshow or by swiping.
 
-![Graphical Reader on iOS Safari showing a Nature Portfolio article, keyword highlights, and slideshow controls](docs/images/iOS%20Safari%20230px.png)
+<img src="docs/images/iOS%20Safari.png" alt="Graphical Reader on iOS Safari showing a Nature Portfolio article, keyword highlights, and slideshow controls" width="230">
 
 *Graphical Reader on a Nature search results page in iOS Safari. Illustration from [Endo et al., Nature Synthesis (2025)](https://doi.org/10.1038/s44160-024-00719-x), shown resized in the screenshot under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
 
