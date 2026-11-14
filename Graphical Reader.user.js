@@ -1885,7 +1885,10 @@
                     (Date.now() - publicationDate.getTime()) / 86_400_000
                 ));
                 const dateLabel = document.createElement('div');
-                dateLabel.textContent = `${publicationDate.toISOString().slice(0, 10)} (${elapsedDays} days ago)`;
+                const datePrefix = item.isNature && item.hasVersionOfRecordDate === false
+                    ? 'Accepted manuscript PDF: '
+                    : '';
+                dateLabel.textContent = `${datePrefix}${publicationDate.toISOString().slice(0, 10)} (${elapsedDays} days ago)`;
                 dateLabel.style.cssText =
                     'flex-basis:100%;color:var(--toc-viewer-text);opacity:.72;text-align:center;' +
                     'font:500 14px/1.2 system-ui,-apple-system,sans-serif;';
