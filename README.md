@@ -15,7 +15,7 @@ Tired of scrolling through journal pages or text-heavy RSS feeds to find new pap
 - [Customization](#customization)
 
 ## Features
-- View only graphical abstracts or article images
+- Browse graphical abstracts with Figure 1 or the lead image as a fallback.
 - Optionally display titles and journal names.
 - Browse by slideshow, touch, or keyboard.
 - Resume from a saved reading position.
@@ -105,4 +105,5 @@ Open the gear menu in the upper-right corner.
 To customize the journal sequence or keyword filters, follow the comments near the top of [Graphical Reader.user.js](./Graphical%20Reader.user.js) in your local copy or in the Tampermonkey editor.
 
 ## Notes
-Nature search results include accepted manuscript PDFs. Graphical Reader displays Figure 1 once the HTML version is available. For *Nature Communications*, the HTML version can appear on the same day as the accepted manuscript or up to three months later.
+- Nature search results include accepted manuscript PDFs. Graphical Reader displays an image once the HTML version is available. For *Nature Communications*, the HTML version can appear on the same day as the accepted manuscript or up to three months later.
+- For journals without a standard graphical abstract, Graphical Reader shows Figure 1 in *Nature*, *Nature Communications*, and *Nature Materials*, and the first figure or lead image in *Science* and *Science Advances*.
