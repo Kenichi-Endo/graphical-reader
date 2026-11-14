@@ -105,4 +105,4 @@ Open the gear menu in the upper-right corner.
 To customize the journal sequence or keyword filters, follow the comments near the top of [Graphical Reader.user.js](./Graphical%20Reader.user.js) in your local copy or in the Tampermonkey editor.
 
 ## Notes
-Nature search results are sorted by the publication date of the accepted manuscript. The graphical abstract becomes available when the Version of Record is published. In *Nature Communications*, the Version of Record can appear on the same day as the accepted manuscript or up to three months later.
+Nature search results include accepted manuscript PDFs. Graphical Reader displays Figure 1 once the HTML version is available. For *Nature Communications*, the HTML version can appear on the same day as the accepted manuscript or up to three months later.

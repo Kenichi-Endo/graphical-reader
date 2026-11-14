@@ -2921,7 +2921,7 @@
                         autoplayLoadingSourceItem = null;
                         autoplayLoadingItem = null;
                     }
-                    await showArticleImageError(item, imageLoadId, 'Graphical abstract is not yet available.',
+                    await showArticleImageError(item, imageLoadId, 'HTML version is not yet available.',
                         { bufferFailure: false });
                     return;
                 }
