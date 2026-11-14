@@ -1390,7 +1390,8 @@
                         ? article.querySelector('.article-section__content figure img, article figure img, figure img')
                     : isNatureArticle
                         ? article.querySelector('img[alt*="graphical abstract" i]') ||
-                            article.querySelector('figure#Fig1 img, #Fig1 figure img')
+                            article.querySelector('#Fig1')?.closest('figure')?.querySelector('img') ||
+                            article.querySelector('#Fig1 figure img')
                     : isScienceFeature
                         // Features use a lead image in the article header;
                         // prefer it over the first in-body figure.
