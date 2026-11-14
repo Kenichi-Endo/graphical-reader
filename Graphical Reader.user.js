@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Graphical Reader
-// @version      0.1.0
+// @version      0.1.1
 // @match        https://pubs.acs.org/search-results*
 // @match        https://www.cell.com/*/newarticles*
 // @match        https://www.nature.com/search*
