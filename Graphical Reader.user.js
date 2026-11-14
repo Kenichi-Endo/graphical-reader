@@ -2826,17 +2826,17 @@
             return item.displayReadyPromise;
         }
 
-        async function showArticleImageError(item, imageLoadId, message, options) {
+        async function showArticleImageError(item, imageLoadId, message, { figurePlaceholder = false, bufferFailure } = {}) {
             if (imageLoadId !== imageLoadSequence || items[index] !== item || viewerDismissed) return;
-            imageError.dataset.figurePlaceholder = String(message === 'No figures');
-            if (message === 'No figures') {
+            imageError.dataset.figurePlaceholder = String(figurePlaceholder);
+            if (figurePlaceholder) {
                 image.style.visibility = 'hidden';
                 image.removeAttribute('src');
                 restorePaperTitleLayout();
                 paperTitle.style.top = `${journalNameLabel.getBoundingClientRect().bottom + 4}px`;
                 paperTitle.style.bottom = 'auto';
             } else showTitleFallback();
-            showImageError(message, options);
+            showImageError(message, { bufferFailure });
         }
 
         async function show(nextIndex, { startBuffering = true, ignoreFilter = false } = {}) {
@@ -2922,7 +2922,7 @@
                         autoplayLoadingItem = null;
                     }
                     await showArticleImageError(item, imageLoadId, 'HTML version is not yet available.',
-                        { bufferFailure: false });
+                        { figurePlaceholder: true, bufferFailure: false });
                     return;
                 }
                 if (item.displayImageFailed && items[index] === item) {
@@ -2938,7 +2938,7 @@
                     requestAnimationFrame(fitImage);
                 } else if (!highResolutionImage && item.isNature && item.highResolutionUnavailable &&
                     items[index] === item) {
-                    await showArticleImageError(item, imageLoadId, 'No figures');
+                    await showArticleImageError(item, imageLoadId, 'No figures', { figurePlaceholder: true });
                 } else if (!highResolutionImage && item.highResolutionUnavailable && item.src &&
                     items[index] === item) {
                     activeImageSource = item.src;
