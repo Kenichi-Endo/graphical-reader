@@ -1515,6 +1515,10 @@
     }
 
     function abbreviateJournalName(title) {
+        if (/^(?:advanced materials|adv\. mater\.)\s*(?::\s*)?early view$/i.test(title.trim())) {
+            return 'Adv. Mater.';
+        }
+
         const knownAbbreviations = {
             'journal of the american chemical society': 'J. Am. Chem. Soc.',
             'journal american chemical society': 'J. Am. Chem. Soc.',
