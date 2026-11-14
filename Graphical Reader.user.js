@@ -2665,9 +2665,12 @@
             bufferingArticles = (async () => {
                 let candidateIndex = index + 1;
                 while (generation === bufferingGeneration && !bufferingFailed) {
-                    // If the user moves forward while buffering, never work on
-                    // an item that is now behind the current article.
                     candidateIndex = Math.max(candidateIndex, index + 1);
+                    // A backward move can expose an unbuffered next article.
+                    // Finish the current request, then resume from the playhead.
+                    if (items[index + 1] && !items[index + 1].bufferReady) {
+                        candidateIndex = index + 1;
+                    }
                     if (candidateIndex >= items.length) {
                         if (!await appendNewerItems(generation)) break;
                         notifyBufferingProgress();
@@ -2693,10 +2696,10 @@
             return bufferingArticles;
         }
 
-        async function bufferNextArticle() {
-            // Playback and manual navigation consume the same worker's results.
+        async function bufferNextArticle(navigationId) {
             const generation = bufferingGeneration;
-            while (!viewerDismissed && generation === bufferingGeneration && !bufferingFailed) {
+            while (!viewerDismissed && navigationId === navigationSequence &&
+                generation === bufferingGeneration && !bufferingFailed) {
                 const nextItem = items[index + 1];
                 if (!nextItem && !canLoadNewerItems) return;
                 updateNavigationFilterProgress(nextItem);
@@ -3230,10 +3233,10 @@
             try {
                 return await withLoadingStatus(async () => {
                 if (!bufferingFailed) {
-                    if (allowNewBuffer) await bufferNextArticle();
-                    else if (bufferingArticles) await bufferNextArticle();
+                    if (allowNewBuffer || bufferingArticles) await bufferNextArticle(navigationId);
                     else if (!items[index + 1]?.imagePreloaded) return false;
                 }
+                if (navigationId !== navigationSequence || items[index] !== sourceItem || viewerDismissed) return false;
                 if (bufferingFailed && !await loadNextArticleAfterBufferFailure()) return false;
                 const nextItem = items[index + 1];
                 if (nextItem) await prepareArticleForDisplay(nextItem);
