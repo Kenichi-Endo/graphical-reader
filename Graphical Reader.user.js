@@ -2859,7 +2859,7 @@
             if (!item || !items.includes(item)) return;
             const unpublished = await hasUnpublishedNatureArticle(item);
             if (showRequestId !== imageLoadSequence || items[index] !== item || viewerDismissed) return;
-            if (resumePositionEnabled && !unpublished) {
+            if (resumePositionEnabled) {
                 storeReadingPosition({
                     doi: item.doi || '',
                     href: item.href || '',
