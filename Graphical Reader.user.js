@@ -3455,10 +3455,6 @@
                 autoplayTimer = 'waiting-for-image';
                 void waitForCurrentImage().then(async () => {
                     if (sequence !== autoplaySequence || !slideshowActive) return;
-                    if (items[index].hasVersionOfRecordDate === false) {
-                        scheduleAutoplayAdvance();
-                        return;
-                    }
                     autoplayTimer = 'buffering-next';
                     const advanced = await next();
                     if (sequence !== autoplaySequence || !slideshowActive) return;
