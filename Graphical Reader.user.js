@@ -2421,7 +2421,7 @@
         }
         const nextPageNotice = document.createElement('div');
         nextPageNotice.hidden = true;
-        nextPageNotice.textContent = 'Two consecutive articles have no version of record yet';
+        nextPageNotice.textContent = 'Two consecutive articles have no HTML version yet';
         nextPageNotice.style.cssText =
             'position:fixed;left:50%;bottom:154px;transform:translateX(-50%);z-index:4;' +
             'width:max-content;max-width:calc(100vw - 32px);text-align:center;' +
