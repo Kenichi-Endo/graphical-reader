@@ -2838,6 +2838,11 @@
 
         async function showArticleImageError(item, imageLoadId, message, { figurePlaceholder = false, bufferFailure } = {}) {
             if (imageLoadId !== imageLoadSequence || items[index] !== item || viewerDismissed) return;
+            // A displayed placeholder completes the transition just like a loaded image.
+            if (autoplayLoadingItem === item) {
+                autoplayLoadingSourceItem = null;
+                autoplayLoadingItem = null;
+            }
             imageError.dataset.figurePlaceholder = String(figurePlaceholder);
             if (figurePlaceholder) {
                 image.style.visibility = 'hidden';
